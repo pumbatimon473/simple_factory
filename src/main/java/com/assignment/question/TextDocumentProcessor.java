@@ -1,20 +1,18 @@
 package com.assignment.question;
 
-public class TextDocumentProcessor {
-    private String documentName;
-
+// Part 2: Extend DocumentProcessor
+public class TextDocumentProcessor extends DocumentProcessor {
+    
     public TextDocumentProcessor(String documentName) {
-        this.documentName = documentName;
+        super(documentName);
     }
 
-    public String getDocumentName() {
-        return documentName;
-    }
-
+    @Override
     public DocumentType supportsType() {
         return DocumentType.TEXT;
     }
 
+    @Override
     public void processDocument() {
         // Implement text document processing logic
         System.out.println("Processing a text document: " + getDocumentName());

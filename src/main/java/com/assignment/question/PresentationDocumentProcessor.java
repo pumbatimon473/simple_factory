@@ -1,20 +1,18 @@
 package com.assignment.question;
 
-public class PresentationDocumentProcessor {
-    private String documentName;
-
+// Part 2: Extend DocumentProcessor
+public class PresentationDocumentProcessor extends DocumentProcessor {
+    
     public PresentationDocumentProcessor(String documentName) {
-        this.documentName = documentName;
+        super(documentName);
     }
 
-    public String getDocumentName() {
-        return documentName;
-    }
-
+    @Override
     public DocumentType supportsType() {
         return DocumentType.PRESENTATION;
     }
 
+    @Override
     public void processDocument() {
         // Implement presentation document processing logic
         System.out.println("Processing a presentation document: " + getDocumentName());
