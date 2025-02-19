@@ -1,28 +1,20 @@
 package com.assignment.question;
 
-public class PushNotification {
-    private String recipient;
-    private String message;
-
-    public PushNotification(String recipient, String message) {
-        this.recipient = recipient;
-        this.message = message;
-    }
-
-    public String getRecipient() {
-        return recipient;
-    }
+// Part 2: Extend Notification class
+public class PushNotification extends Notification {
     
-    public String getMessage() {
-        return message;
+    public PushNotification(String recipient, String message) {
+        super(recipient, message);
     }
 
+    @Override
     public void sendNotification() {
         // Logic to send a push notification
-        System.out.println("Push notification sent to device " + recipient);
-        System.out.println("Message: " + message);
+        System.out.println("Push notification sent to device " + this.getRecipient());
+        System.out.println("Message: " + this.getMessage());
     }
 
+    @Override
     public NotificationType notificationType() {
         return NotificationType.PUSH;
     }

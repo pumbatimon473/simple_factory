@@ -1,34 +1,26 @@
 package com.assignment.question;
 
-public class EmailNotification {
-    private String recipient;
+// Part 2: Extend Notification class
+public class EmailNotification extends Notification {
     private String sender;
-    private String message;
-
+    
     public EmailNotification(String recipient, String sender, String message) {
-        this.recipient = recipient;
+        super(recipient, message);
         this.sender = sender;
-        this.message = message;
-    }
-
-    public String getRecipient() {
-        return recipient;
     }
 
     public String getSender() {
-        return sender;
+        return this.sender;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
+    @Override
     public void sendNotification() {
         // Logic to send an email
-        System.out.println("Email sent to " + recipient + " from " + sender);
-        System.out.println("Message: " + message);
+        System.out.println("Email sent to " + this.getRecipient() + " from " + this.sender);
+        System.out.println("Message: " + this.getMessage());
     }
 
+    @Override
     public NotificationType notificationType() {
         return NotificationType.EMAIL;
     }
